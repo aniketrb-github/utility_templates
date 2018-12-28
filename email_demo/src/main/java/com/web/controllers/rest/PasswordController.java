@@ -5,7 +5,6 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.CookieValue;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -13,7 +12,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.dao.password.reset.token.EmailVO;
 import com.utility.config.UnauthenticatedRestAction;
-import com.utility.constant.ApplicationConstants;
 import com.utility.vo.response.RestResponse;
 import com.web.central.handler.IApplicationServiceHandler;
 
@@ -38,7 +36,6 @@ public class PasswordController {
 	@ApiOperation(value = "Send Welcome Email", notes = "Sends Welcome Email")
 	@ApiResponses(value = { @ApiResponse(code = 200, message = "OK"), })
 	public ResponseEntity<RestResponse> sendEmail(
-			@CookieValue(value = ApplicationConstants.APPLICATION_SESSIONID, defaultValue = "") final String sessionId,
 			@RequestBody(required = true) EmailVO emailVO, HttpServletRequest request, HttpServletResponse response) {
 
 		return applicationServiceHandler.process(UnauthenticatedRestAction.SEND_EMAIL, null, emailVO, request,
