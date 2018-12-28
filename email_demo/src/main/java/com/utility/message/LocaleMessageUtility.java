@@ -7,8 +7,8 @@ import org.springframework.context.MessageSourceAware;
 import org.springframework.stereotype.Component;
 
 /**
+ * @author Aniket Bharsakale
  * Utility class that reads locale based messages
- * 
  */
 @Component("localeMessageUtility")
 public class LocaleMessageUtility implements MessageSourceAware {

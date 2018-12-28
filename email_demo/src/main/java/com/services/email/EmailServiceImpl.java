@@ -18,6 +18,10 @@ import com.utility.email.MailHeader;
 import com.utility.email.MailManager;
 import com.utility.email.MailMessage;
 
+/**
+ * @author Aniket Bharsakale
+ *
+ */
 @Service
 public class EmailServiceImpl implements IEmailService {
 	Logger LOGGER = LoggerFactory.getLogger(EmailServiceImpl.class);

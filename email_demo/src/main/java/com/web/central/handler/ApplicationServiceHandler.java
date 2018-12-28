@@ -17,6 +17,10 @@ import com.utility.logger.AppLogger;
 import com.utility.message.LocaleMessageUtility;
 import com.utility.vo.response.RestResponse;
 
+/**
+ * @author Aniket Bharsakale
+ *
+ */
 public class ApplicationServiceHandler implements IApplicationServiceHandler {
 
 	private final ThreadLocal<AppLogger> appLogger = new ThreadLocal<>();
@@ -30,18 +34,18 @@ public class ApplicationServiceHandler implements IApplicationServiceHandler {
 	public ResponseEntity<RestResponse> process(UnauthenticatedRestAction action, String sessionId, Object param,
 			HttpServletRequest httpRequest, HttpServletResponse httpResponse) {
 
-		AppLogger logger = getVcsLogger(true);
+		AppLogger logger = getAppLogger(true);
 		HttpStatus status = HttpStatus.OK;
 		RestResponse response = null;
 
 		try {
 			switch (action) {
-			case SEND_RESET_PASSWORD_LINK:
+			case SEND_EMAIL:
 				EmailVO emailVO = null;
 				if (param instanceof EmailVO) {
 					emailVO = (EmailVO) param;
 				}
-				response = userServices.sendResetPasswordLink(emailVO);
+				response = userServices.sendEmail(emailVO);
 				break;
 
 			default:
@@ -67,32 +71,35 @@ public class ApplicationServiceHandler implements IApplicationServiceHandler {
 				break;
 			}
 		} catch (Exception e) {
-
+			logger.error("Unexpected exception", e);
+			status = HttpStatus.INTERNAL_SERVER_ERROR;
+			response = new RestResponse(Response.Status.INTERNAL_SERVER_ERROR.getStatusCode(), ApplicationCode.UNEXPECTED_ERROR.getCodeId(),
+					localeMessageUtility.getErrorMessage(ApplicationCode.UNEXPECTED_ERROR.getCodeId()));
 		}
 
 		return ResponseEntity.status(status).body(response);
 	}
 
 	/**
-	 * Returns a VCSLogger instance for this thread
+	 * Returns a AppLogger instance for this thread
 	 * 
 	 * @return
 	 */
-	private AppLogger getVcsLogger(boolean resetMdc) {
+	private AppLogger getAppLogger(boolean resetMdc) {
 
-		AppLogger vcsLogger = this.appLogger.get();
+		AppLogger appLogger = this.appLogger.get();
 
-		if (vcsLogger == null) {
-			vcsLogger = new AppLogger(ApplicationServiceHandler.class);
-			this.appLogger.set(vcsLogger);
+		if (null == appLogger) {
+			appLogger = new AppLogger(ApplicationServiceHandler.class);
+			this.appLogger.set(appLogger);
 		}
 
 		if (resetMdc) {
-			vcsLogger.clearMdc();
-			vcsLogger.putMdc("api", "vcs");
+			appLogger.clearMdc();
+			appLogger.putMdc("api", "email_app");
 		}
 
-		return vcsLogger;
+		return appLogger;
 	}
 
 }

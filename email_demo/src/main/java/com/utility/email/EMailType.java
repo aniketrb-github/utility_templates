@@ -1,5 +1,9 @@
 package com.utility.email;
 
+/**
+ * @author Aniket Bharsakale
+ *
+ */
 public enum EMailType {
 	TEXT("text/txt"), HTML("text/html");
 

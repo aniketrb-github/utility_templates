@@ -6,6 +6,10 @@ import javax.naming.NamingException;
 import com.utility.constant.ApplicationConstants;
 import com.utility.logger.AppLogger;
 
+/**
+ * @author Aniket Bharsakale
+ *
+ */
 public class TomcatUtils {
 	private static final AppLogger logger = new AppLogger(TomcatUtils.class);
 

@@ -11,10 +11,9 @@ import org.slf4j.Marker;
 import com.utility.exception.AppException;
 
 /**
+ * @author Aniket Bharsakale
  * The Logger Instance to use in the projects
- *
  */
-
 public class AppLogger implements Logger{
 
 	private static final String EMPTY_STRING = "";

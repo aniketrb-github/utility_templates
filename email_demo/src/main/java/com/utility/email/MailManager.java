@@ -13,6 +13,10 @@ import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.mail.javamail.MimeMessageHelper;
 import org.springframework.stereotype.Component;
 
+/**
+ * @author Aniket Bharsakale
+ *
+ */
 @Component
 public class MailManager {
 

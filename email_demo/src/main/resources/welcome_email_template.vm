@@ -1,0 +1,16 @@
+<p>${firstName} ${lastName},</p>
+
+
+<p>To reset your FLOE4 password for account name "${email}", please <b><a href="${resetPasswordLink}">click here.</a></b></p> 
+
+
+<p>This link will expire in ${resetPasswordTokenExpirationTime} hour.</p>
+
+
+<p>If you received this email in error, please ignore it and your password will not be changed.</p>
+
+
+<p>VitalSource FLOE4 Team</p>
+
+
+<p>*** This is an automatically generated email, please do not reply ***</p>

@@ -5,10 +5,11 @@ import java.util.ArrayList;
 
 import com.utility.vo.empty.EmptyObject;
 
+/**
+ * @author Aniket Bharsakale
+ *
+ */
 public class RestResponse implements Serializable {
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 1L;
 	private Float version = 1.0F;
 	private Integer code;

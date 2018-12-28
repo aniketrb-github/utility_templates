@@ -1,5 +1,9 @@
 package com.utility.config;
 
+/**
+ * @author Aniket Bharsakale
+ *
+ */
 public enum UnauthenticatedRestAction {
-	SEND_RESET_PASSWORD_LINK;
+	SEND_EMAIL;
 }

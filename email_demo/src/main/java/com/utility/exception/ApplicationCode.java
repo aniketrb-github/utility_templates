@@ -2,6 +2,10 @@ package com.utility.exception;
 
 import java.util.NoSuchElementException;
 
+/**
+ * @author Aniket Bharsakale
+ *
+ */
 public enum ApplicationCode {
 	UNEXPECTED_ERROR("response.error.unexpected"),
 	STATUS_OK("response.ok"),

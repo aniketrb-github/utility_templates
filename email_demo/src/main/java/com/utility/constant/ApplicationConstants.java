@@ -1,5 +1,9 @@
 package com.utility.constant;
 
+/**
+ * @author Aniket Bharsakale
+ *
+ */
 public class ApplicationConstants {
 
 	public static final String SEPARATOR_COMMA = ",";
@@ -15,8 +19,7 @@ public class ApplicationConstants {
 	public static final String SUCCESS_MAIL = "Success Mail";
 	public static final String FAILURE_MAIL = "Failure Mail";
 	
-	public static final String RESET_PWD_WELCOME_EMAIL_TEMPLATE = "reset_pwd_welcome_user_email_template.vm";
-	public static final String RESET_PWD_REGULAR_EMAIL_TEMPLATE = "reset_pwd_existing_user_email_template.vm";
+	public static final String WELCOME_EMAIL_TEMPLATE = "welcome_email_template.vm";
 	
 	public static final String RESET_PASSWORD_SUBJECT_LINE_NEW_USER = "Welcome to Email Sending Demo app";
 	public static final String FORGOT_PASSWORD_SUBJECT_LINE_EXISTING_USER = "Email Sending Demo app Reset Password";

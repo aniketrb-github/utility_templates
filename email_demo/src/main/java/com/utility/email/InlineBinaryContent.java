@@ -5,6 +5,10 @@ import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
 
+/**
+ * @author Aniket Bharsakale
+ *
+ */
 public class InlineBinaryContent {
 
 	private boolean embeddedContentPresent = false;
@@ -12,12 +16,12 @@ public class InlineBinaryContent {
 	/**
 	 * Map holds all image paths that we load from the classpath
 	 */
-	private final Map<String, String> embeddedFiles = new HashMap<String, String>();
+	private final Map<String, String> embeddedFiles = new HashMap<>();
 
 	/**
 	 * if there is a file that is dynamic just pass the contents as byte array
 	 */
-	private final Map<String, byte[]> embeddedContent = new HashMap<String, byte[]>();
+	private final Map<String, byte[]> embeddedContent = new HashMap<>();
 
 	/**
 	 * Will add the relativePath to the list of inline contents
@@ -45,7 +49,7 @@ public class InlineBinaryContent {
 	 * @return {@link Set} of {@link String}
 	 */
 	public Set<String> getBinaryContentKeys() {
-		return new HashSet<String>(this.embeddedContent.keySet());
+		return new HashSet<>(this.embeddedContent.keySet());
 	}
 
 	public String getAttachmentPath(final String fileName) {
@@ -58,7 +62,7 @@ public class InlineBinaryContent {
 	 * @return {@link Set} of {@link String}
 	 */
 	public Set<String> getAttachmentsFileNames() {
-		return new HashSet<String>(this.embeddedFiles.keySet());
+		return new HashSet<>(this.embeddedFiles.keySet());
 	}
 
 	public byte[] getbinaryContent(final String fileName) {

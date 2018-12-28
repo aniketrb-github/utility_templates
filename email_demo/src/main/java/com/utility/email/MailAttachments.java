@@ -5,18 +5,20 @@ import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.Set;
 
+/**
+ * @author Aniket Bharsakale
+ *
+ */
 public class MailAttachments {
 
 	/**
 	 * Class used to manage the various attachment attributes
 	 * 
-	 * @author Robin.Varghese
-	 * 
 	 */
 	protected static class Attachment {
 		private final byte[] content;
 		private final String fileName;
-		private final String contentType;// optional
+		private final String contentType;
 
 		Attachment(final byte[] content, final String fileName, final String contentType) {
 			this.content = content;
@@ -69,7 +71,7 @@ public class MailAttachments {
 	}
 
 	public Set<String> getAttachmentsNames() {
-		return new HashSet<String>(this.attachments.keySet());
+		return new HashSet<>(this.attachments.keySet());
 	}
 
 }

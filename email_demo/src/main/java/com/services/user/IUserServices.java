@@ -4,8 +4,12 @@ import com.dao.password.reset.token.EmailVO;
 import com.utility.exception.AppException;
 import com.utility.vo.response.RestResponse;
 
+/**
+ * @author Aniket Bharsakale
+ *
+ */
 public interface IUserServices {
 
-	RestResponse sendResetPasswordLink(EmailVO emailVO) throws AppException;
+	RestResponse sendEmail(EmailVO emailVO) throws AppException;
 
 }

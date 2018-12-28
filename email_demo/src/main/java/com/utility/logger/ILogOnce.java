@@ -1,6 +1,7 @@
 package com.utility.logger;
 
 /**
+ * @author Aniket Bharsakale
  * Interface exposes methods indicating if object has already been logged
  */
 public interface ILogOnce {

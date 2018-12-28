@@ -2,11 +2,12 @@ package com.utility.exception;
 
 import com.utility.logger.ILogOnce;
 
+/**
+ * @author Aniket Bharsakale
+ *
+ */
 public class AppException extends RuntimeException implements ILogOnce {
 
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 1L;
 
 	public static final String UNHANDLED_EXCEPTION_TXT = "Unhandled Exception !!! ";

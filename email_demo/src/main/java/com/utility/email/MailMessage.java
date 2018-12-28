@@ -1,5 +1,9 @@
 package com.utility.email;
 
+/**
+ * @author Aniket Bharsakale
+ *
+ */
 public class MailMessage {
 
 	private String content;

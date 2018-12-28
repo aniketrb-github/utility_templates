@@ -22,23 +22,28 @@ import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiResponse;
 import io.swagger.annotations.ApiResponses;
 
+
+/**
+ * @author Aniket Bharsakale
+ *
+ */
 @RestController
-@RequestMapping(value="/resetPassword")
-@Api(value = "/ResetPassword")
+@RequestMapping(value="/welcomeEmail")
+@Api(value = "/welcomeEmail")
 public class PasswordController {
 	
 	@Autowired
 	private IApplicationServiceHandler applicationServiceHandler;
 	
 	@RequestMapping(method = RequestMethod.POST, produces = "application/json")
-	@ApiOperation(value = "Sends Reset Password Link", notes = "Sends Reset Password Link")
+	@ApiOperation(value = "Send Welcome Email", notes = "Sends Welcome Email")
 	@ApiResponses(value = {
 			@ApiResponse(code = 200, message = "OK"),
 	})
-	public ResponseEntity<RestResponse> resetPasswordRequest(@CookieValue(value = ApplicationConstants.APPLICATION_SESSIONID, defaultValue = "") final String sessionId,
+	public ResponseEntity<RestResponse> sendEmail(@CookieValue(value = ApplicationConstants.APPLICATION_SESSIONID, defaultValue = "") final String sessionId,
 			@RequestBody(required = true) EmailVO emailVO, HttpServletRequest request, HttpServletResponse response) {
 		
-		return applicationServiceHandler.process(UnauthenticatedRestAction.SEND_RESET_PASSWORD_LINK, null, emailVO, request, response);
+		return applicationServiceHandler.process(UnauthenticatedRestAction.SEND_EMAIL, null, emailVO, request, response);
 	}
 
 }

@@ -6,11 +6,10 @@
 		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
 		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
 
-    <!-- Uncomment and your base-package here:
-         <context:component-scan
-            base-package="org.springframework.samples.web"/>  -->
+  	<context:component-scan base-package="com.*" /> 
 
-
+	<context:annotation-config />
+	
     <mvc:annotation-driven />
 
 	<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
@@ -18,5 +17,16 @@
 	        <property name="prefix" value="/WEB-INF/view/"/>
 	        <property name="suffix" value=".jsp"/>
 	</bean>
+	
+	<bean id="velocityEngine"
+	class="org.springframework.ui.velocity.VelocityEngineFactoryBean">
+	<property name="velocityProperties">
+		<props>
+			<prop key="resource.loader">class</prop>
+			<prop key="class.resource.loader.class">org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+			</prop>
+		</props>
+	</property>
+</bean>
 
 </beans>
