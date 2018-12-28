@@ -7,6 +7,7 @@ import javax.ws.rs.core.Response;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Component;
 
 import com.dao.password.reset.token.EmailVO;
 import com.services.user.IUserServices;
@@ -21,6 +22,7 @@ import com.utility.vo.response.RestResponse;
  * @author Aniket Bharsakale
  *
  */
+@Component("applicationServiceHandler")
 public class ApplicationServiceHandler implements IApplicationServiceHandler {
 
 	private final ThreadLocal<AppLogger> appLogger = new ThreadLocal<>();
