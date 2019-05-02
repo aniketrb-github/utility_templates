@@ -1,0 +1,18 @@
+{
+   "projects":[
+      {
+         "name_token":"Metro_Happy_QA1",
+         "product_mapping":{
+            "HappyPath_L00":"HappyPath-L0",
+            "HappyPath_L001":"HappyPath-L01"
+         }
+      },
+      {
+         "name_token":"Metro_Happy_QA2",
+         "product_mapping":{
+            "HappyPath_L002":"HappyPath-L02",
+            "HappyPath_L003":"HappyPath-L03"
+         }
+      }
+   ]
+}
